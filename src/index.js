@@ -10,6 +10,7 @@ function Greeting() {
           <a href="#">hello world</a>
         </li>
         <img src="" alt="" />
+        <input type="text" name="" id="" />
       </ul>
     </div>
   );
