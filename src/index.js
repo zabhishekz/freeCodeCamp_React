@@ -1,19 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+// Nested components, React tools
+
 function Greeting() {
   return (
-    <div className="">
-      <h3>hello world</h3>
-      <ul>
-        <li>
-          <a href="#">hello world</a>
-        </li>
-        <img src="" alt="" />
-        <input type="text" name="" id="" />
-      </ul>
+    <div>
+      <Person />
+      <Message />
     </div>
   );
 }
+
+const Person = () => <h2>John Doe</h2>;
+const Message = () => {
+  return <p>this is my message</p>;
+};
 
 ReactDOM.render(<Greeting />, document.getElementById("root"));
