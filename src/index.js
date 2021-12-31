@@ -1,9 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-//In order for react to know it is going to be a component, function should be setup with Capital initial letter
-function Greeting() {
-  return <h4>This is Abhishek and this is my first component</h4>;
-}
+//stateless functional component
+//always return JSX
+
+// function Greeting() {
+//   return <h4>hello world</h4>;
+// }
+
+const Greeting = () => {
+  return React.createElement("h1", {}, "hello world");
+};
 
 ReactDOM.render(<Greeting />, document.getElementById("root"));
