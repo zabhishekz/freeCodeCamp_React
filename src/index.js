@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 
 import "./index.css";
 
-//setup vars
 const books = [
   {
     img: "https://images-na.ssl-images-amazon.com/images/I/51p2SDOCV9L._SX258_BO1,204,203,200_.jpg",
@@ -15,19 +14,25 @@ const books = [
     title: "Our Class is a Family",
     author: "Shannon Olsen",
   },
+  {
+    img: "https://images-na.ssl-images-amazon.com/images/I/41EzNnr4YUL._SY264_BO1,204,203,200_QL40_ML2_.jpg",
+    title: "The Vanishing Half",
+    author: "Brit Bennett",
+  },
 ];
 
-const names = ["john", "peter", "susan"];
-const newNames = names.map((name) => {
-  return <h1>{name}</h1>;
-});
-console.log(newNames);
-
 function BookList() {
-  return <section className="booklist">{newNames}</section>;
+  return (
+    <section className="booklist">
+      {books.map((book) => {
+        return <Book book={book} />;
+      })}
+    </section>
+  );
 }
 
-const Book = ({ img, title, author, children }) => {
+const Book = (props) => {
+  const { img, title, author } = props.book;
   return (
     <article className="book">
       <img src={img} />
